@@ -1,8 +1,5 @@
 package Tests;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -16,7 +13,7 @@ public class AbstractTest {
     private static ByteArrayInputStream testIn;
     private static ByteArrayOutputStream testOut;
 
-    @BeforeEach
+
     public void setUpOutput() {
         testOut = new ByteArrayOutputStream();
         System.setOut(new PrintStream(testOut));
@@ -32,7 +29,7 @@ public class AbstractTest {
         System.setIn(testIn);
     }
 
-    @AfterEach
+
     public void restoreSystemInputOutput() {
         System.setIn(systemIn);
         System.setOut(systemOut);
